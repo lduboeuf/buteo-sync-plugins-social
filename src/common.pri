@@ -1,4 +1,5 @@
-QMAKE_CXXFLAGS += -Werror
+QMAKE_CXXFLAGS += -Wno-overloaded-virtual
+QMAKE_CXXFLAGS += -Wno-deprecated-declarations
 CONFIG += link_pkgconfig
 PKGCONFIG += \
     libsignon-qt5 \

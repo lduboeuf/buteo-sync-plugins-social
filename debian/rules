@@ -1,31 +1,24 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
-export DPKG_GENSYMBOLS_CHECK_LEVEL=4
-
+export DPKG_GENSYMBOLS_CHECK_LEVEL=1
+export QT_SELECT := qt5
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-export PKG_CONFIG_PATH:=$(PWD)/libsocialcache/pkgconfig:$(PKG_CONFIG_PATH) 
-
 override_dh_auto_configure:
-	cd libsocialcache && qmake ubports.pro && make
 	dh_auto_configure -- \
-		CONFIG+=google
+		CONFIG+=google \
+		CONFIG+=calendar \
 
-override_dh_install:
-	# Add account files
-	mkdir -p debian/buteo-sync-plugins-contacts-google2/usr/share/accounts/services/
-	cp data/ubports/account-services/* \
-		debian/buteo-sync-plugins-contacts-google2/usr/share/accounts/services/
-	# Remove undesired Buteo profiles
-	rm debian/buteo-sync-plugins-contacts-google2/etc/buteo/profiles/sync/*
-	# Add Buteo profiles
-	mkdir -p debian/buteo-sync-plugins-contacts-google2/etc/buteo/profiles/sync/
-	cp data/ubports/templates/* \
-		debian/buteo-sync-plugins-contacts-google2/etc/buteo/profiles/sync/
-	# remove the tests
-	rm -rf debian/tmp/opt
-	dh_install --fail-missing
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp
+
+override_dh_missing:
+	dh_missing --fail-missing
 
 %:
-	dh $@ --parallel --fail-missing 
+	dh $@
+
+
+
+

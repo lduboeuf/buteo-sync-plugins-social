@@ -1,4 +1,4 @@
-buteo-sync-plugins-social (0.1.65+ubports) xenial; urgency=medium
+buteo-sync-plugins-social (0.1.65+ubports) focal; urgency=medium
 
   * Imported into ubports.
 

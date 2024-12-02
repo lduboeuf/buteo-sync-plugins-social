@@ -2,15 +2,16 @@ Source: buteo-sync-plugins-social
 Section: libs
 Priority: optional
 Maintainer: Alberto Mardegan <mardy@users.sourceforge.net>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 12),
                pkg-config,
                libaccounts-qt5-dev,
                libbuteosyncfw5-dev (>= 0.8.5),
                libsignon-qt5-dev,
-               qt5-default,
                qtbase5-dev,
-               qtcontacts-sqlite-qt5-extension-dev,
+               libsocialcache-dev,
+               qtcontacts5-plugin-sqlite-dev,
                qtpim5-dev,
+               libmkcal-qt5-dev,
                signon-plugin-oauth2-dev,
 Standards-Version: 3.9.5
 Homepage: https://launchpad.net/buteo-sync-plugins-contacts
