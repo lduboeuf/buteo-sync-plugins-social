@@ -1,4 +1,5 @@
 etc/buteo/profiles/client/*
 etc/buteo/profiles/sync/*
+debian/data/sync-profiles/* etc/buteo/profiles/sync
 usr/lib/*/buteo-plugins-qt5/oopp/*
 usr/lib/*/libsyncpluginscommon.so*
